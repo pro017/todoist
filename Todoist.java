@@ -89,5 +89,25 @@ class Todoist
     public boolean hayTareasPendientes(){
         return (getNumeroDeTareasPendientes() > 0);
     }
-}
-
+    
+    /** 
+     * Metodo que imprime todas las tareas existentes, una por linea.
+     * El metodo imprime el numero de posicion de la tarea antes del
+     * nombre de la tarea.
+     */
+    public void mostrarTareasNumeradas()
+    {
+        int numeroPosicion = 1;
+        for (String tarea : tareas){
+            System.out.println(numeroPosicion + ". " + tarea);
+            numeroPosicion = numeroPosicion + 1;
+        }
+    }
+    
+    /**
+     * Muestra solo las tareas en posiciones impares sin numero delante ni nada,
+     * solo la tarea
+     */
+    mostrarTareasEnPosicionImpar
+    
+ 
