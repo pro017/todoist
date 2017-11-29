@@ -108,6 +108,99 @@ class Todoist
      * Muestra solo las tareas en posiciones impares sin numero delante ni nada,
      * solo la tarea
      */
-    mostrarTareasEnPosicionImpar
+    public void mostrarTareasEnPosicionImpar() 
+    {
+        int numeroTarea = 1;
+        for (String tarea : tareas) {
+            if (numeroTarea % 2 != 0){
+                System.out.println(tarea);
+            }
+            numeroTarea ++;    
+        }
+    }
     
- 
+    /**
+     * Muestra por pantalla todas las tareas que contienen el texto indicado
+     * como parámetro, una en cada linea, y ademas muestra un mensaje al final indicando
+     * el numero de coincidencias encontradas. Si no hay ninguna que contenga el texto
+     * buscado informa de la situacion. Este metodo es insensible a mayusculas o minusculas
+     */
+    public void mostrarCoincidentes(String textoABuscar)
+    {
+        int numCoincidencias = 0;
+        for (String tarea : tareas){
+           if (tarea.toLowerCase().contains(textoABuscar.toLowerCase())){
+               System.out.println(tarea);
+               numCoincidencias++;
+           } 
+            
+        }
+        
+        if (numCoincidencias == 0) { 
+            System.out.println("No se ha encontrado ninguna tarea con el texto buscado!");
+        }
+        else {
+            System.out.println("Hay " + numCoincidencias + " tareas coincidentes");
+        }
+    }
+    
+    /**
+     * Muestra por pantalla la primera tarea que contenga el texto indicado como 
+     * parametro. En caso de que no haya ninguna coincidencia no muestra nada
+     */
+    public void mostrarPrimeraCoincidente(String textoABuscar)
+    {
+        int numeroDeCoincidenciasEncontradas = 0;  
+        for (String tarea : tareas){
+            if(tarea.toLowerCase().contains(textoABuscar.toLowerCase())){
+                numeroDeCoincidenciasEncontradas++;
+                if (numeroDeCoincidenciasEncontradas == 1) {
+                    System.out.println(tarea);
+
+                }
+            }
+        }
+    }
+    
+    
+    /**
+     * Muestra por pantalla todas las tareas existentes, una por línea,
+     * usando un bucle while
+     */
+    public void mostrarTareas2()
+    {
+        int posicionTareaActual = 0;
+        while (posicionTareaActual < tareas.size()) {
+            System.out.println(tareas.get(posicionTareaActual));
+            posicionTareaActual++;
+        }
+    }
+    
+    
+    /**
+     * Muestra las tareas numeradas usando un bucle while empezando en 1
+     */
+    public void mostrarTareasNumeradas2()
+    {
+        int posicionActual = 0;
+        while(posicionActual < tareas.size()){
+            System.out.println((posicionActual + 1) + "." + tareas.get(posicionActual));
+            posicionActual++;
+        }
+    }
+    
+    /**
+     * Muestra por pantalla las primeras n tareas (siendo n un parametro). En
+     * caso de que no haya suficientes tareas muestra solo las que haya.
+     */
+    public void mostrarNPrimeras(int numeroDeTareasAMostrar)
+    {
+        int posicionActual = 0;
+        while(posicionActual < numeroDeTareasAMostrar && posicionActual < tareas.size()){
+            System.out.println(tareas.get(posicionActual));
+            posicionActual++;
+        }
+    }
+    
+    
+}
