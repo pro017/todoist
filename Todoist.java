@@ -169,12 +169,13 @@ class Todoist
      */
     public void mostrarTareas2()
     {
-        int posicionTareaActual = 0;
-        while (posicionTareaActual < tareas.size()) {
-            System.out.println(tareas.get(posicionTareaActual));
-            posicionTareaActual++;
-        }
+-        int posicionTareaActual = 0;
+-        while (posicionTareaActual < tareas.size()) {
+-            System.out.println(tareas.get(posicionTareaActual));
+-            posicionTareaActual++;
+-        }        
     }
+   
     
     
     /**
@@ -201,6 +202,32 @@ class Todoist
             posicionActual++;
         }
     }
+    
+    
+    /**
+     * Devuelve true si hay al menos una tarea que contenga el texto indicado
+     * como parámetro y false en caso contrario. El metodo se implementar usando
+     * un  bucle for-each
+     */
+    public boolean hayTareaCoincidente(String textoABuscar)
+    {
+        
+    }
+    
+    
+    
+    /**
+     * Devuelve true si hay al menos una tarea que contenga el texto indicado
+     * como parámetro y false en caso contrario. El metodo se debe ejecutar de la
+     * forma mas rapida posible
+     */
+    public boolean hayTareaCoincidenteEficiente(String textoABuscar)
+    {
+        
+    }    
+    
+    
+    
     
     
 }
