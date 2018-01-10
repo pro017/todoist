@@ -4,11 +4,14 @@
  * @author 1ºDAM 2017/2018
  * @version 10/11/2018
  */
+
 public class Tarea 
 {
     private String descripcion;
     // El estado de la tarea: True: Completada; False: No Completada. 
     private boolean estado;
+    private int prioridad;
+    
 
     /**
      * Constructor de la clase Tarea.
@@ -19,7 +22,7 @@ public class Tarea
     {
         this.descripcion = descripcion;
         estado = false;
-
+        prioridad = 1;
     }
 
     /**
@@ -43,12 +46,12 @@ public class Tarea
      */
     public String getDatosTarea()
     {
-        String aDevolver = descripcion;
+        String aDevolver = descripcion + " Prioridad: " + prioridad;
         if (estado) {
-            aDevolver = "[X] " + aDevolver;
+            aDevolver = "[X] " + aDevolver ;
         }
         else {
-            aDevolver = "[ ] " + aDevolver;
+            aDevolver = "[ ] " + aDevolver ;
         }
         return aDevolver; 
     }
@@ -62,7 +65,24 @@ public class Tarea
     public void tareaCompletada() {
         estado = true;
     }
+    
+    /**
+     * Cambia la prioridad de la tarea al valor indicado. Si no es un valor legal,
+     * la prioridad se queda como esta.
+     */
+    public void setPrioridad(int prioridad){
+        if (prioridad >= 1 && prioridad <= 5){
+            this.prioridad = prioridad; 
+        }
+    }
 
 }
+
+
+}
+
+  
+
+
 
 

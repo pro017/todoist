@@ -50,9 +50,21 @@ public class Todoist2{
     {
         Tarea tareaActual = listaDeTareas.get(indiceTarea);
         tareaActual.tareaCompletada();
-        listaDeTareas.set(indiceTarea, tareaActual);
     }
-
+    
+    /**
+     * Cambia la prioridad de la tarea indicada.Por ejemplo,
+     * si el parámetro es 0 cambia la prioridad de la primera tarea, si es 1 la
+     * segunda, etc. Se asume que se indica una tarea valida.
+     */
+    public void cambiarPrioridad(int indiceTarea,int nuevaPrioridad)
+    {
+        Tarea tareaActual = listaDeTareas.get(indiceTarea);
+        tareaActual.setPrioridad(nuevaPrioridad);
+    }
+    
+    
+    
 
 }
 
