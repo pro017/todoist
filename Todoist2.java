@@ -74,11 +74,11 @@ public class Todoist2{
     public void imprimirTareaMasPrioritaria(){
         if(listaDeTareas.size()>0) {
             Tarea tareaPrioridadMaxima = listaDeTareas.get(0);
-            int prioridadMaxima = 0;
+
             for(Tarea tareaActual : listaDeTareas) {
-                if(tareaActual.getPrioridad() >= prioridadMaxima){
+                if(tareaActual.getPrioridad() >= tareaPrioridadMaxima.getPrioridad()){
                     tareaPrioridadMaxima = tareaActual;
-                    prioridadMaxima = tareaActual.getPrioridad();
+
                 }
             }
             System.out.println(tareaPrioridadMaxima.getDatosTarea());
