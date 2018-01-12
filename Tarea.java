@@ -75,9 +75,15 @@ public class Tarea
             this.prioridad = prioridad; 
         }
     }
-
-}
-
+    
+    
+    /**
+     * Devuelve la prioridad de la tarea
+     */
+    public int getPrioridad()
+    {
+        return prioridad;
+    }
 
 }
 

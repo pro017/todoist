@@ -20,7 +20,7 @@ public class Todoist2{
     }
 
     /**
-     * Mostrar tareas numeradas
+     * Mostrar tareas numeradasif
      */
     public void mostrarTareasNumeradas()
     {
@@ -55,16 +55,35 @@ public class Todoist2{
     /**
      * Cambia la prioridad de la tarea indicada.Por ejemplo,
      * si el parámetro es 0 cambia la prioridad de la primera tarea, si es 1 la
-     * segunda, etc. Se asume que se indica una tarea valida.
+     * segunda, etc. Si el usuario indica una posicion no válida, el metodo no
+     * hace nada.
      */
     public void cambiarPrioridad(int indiceTarea,int nuevaPrioridad)
     {
-        Tarea tareaActual = listaDeTareas.get(indiceTarea);
-        tareaActual.setPrioridad(nuevaPrioridad);
+        if(indiceTarea>=0 && indiceTarea<listaDeTareas.size()) {
+            Tarea tareaActual = listaDeTareas.get(indiceTarea);
+            tareaActual.setPrioridad(nuevaPrioridad);
+        }
     }
     
     
-    
+    /**
+     * Imprime todos los datos de la tarea con mayor prioridad. Si hay empate,
+     * imprime la última encontrada. Si no hay tareas no imprime nada.
+     */
+    public void imprimirTareaMasPrioritaria(){
+        if(listaDeTareas.size()>0) {
+            Tarea tareaPrioridadMaxima = listaDeTareas.get(0);
+            int prioridadMaxima = 0;
+            for(Tarea tareaActual : listaDeTareas) {
+                if(tareaActual.getPrioridad() >= prioridadMaxima){
+                    tareaPrioridadMaxima = tareaActual;
+                    prioridadMaxima = tareaActual.getPrioridad();
+                }
+            }
+            System.out.println(tareaPrioridadMaxima.getDatosTarea());
+        }
+    }
 
 }
 
