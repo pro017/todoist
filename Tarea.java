@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 /**
  * Crea un objeto que almacena una tarea y su estado (completada o no).
  * 
@@ -11,9 +12,9 @@ public class Tarea
     // El estado de la tarea: True: Completada; False: No Completada. 
     private boolean estado;
     private int prioridad;
+    private LocalDate fechaTope;
     
-
-    /**
+/**
      * Constructor de la clase Tarea.
      * @param descripcion La descripción de la tarea
      * Sergio
@@ -23,6 +24,7 @@ public class Tarea
         this.descripcion = descripcion;
         estado = false;
         prioridad = 1;
+        fechaTope = null;
     }
 
     /**
@@ -52,6 +54,9 @@ public class Tarea
         }
         else {
             aDevolver = "[ ] " + aDevolver ;
+        }
+        if (fechaTope != null) {
+            aDevolver = aDevolver + " Fecha tope: " + fechaTope;
         }
         return aDevolver; 
     }
@@ -83,6 +88,23 @@ public class Tarea
     public int getPrioridad()
     {
         return prioridad;
+    }
+    
+    /**
+     * Fija la fecha tope de la tarea
+     */
+    public void fijarFechaVencimiento(int dia, int mes, int ano) 
+    {
+        fechaTope = LocalDate.of(ano, mes, dia);
+    }
+    
+    
+    /**
+     * Devuelve la fecha tope
+     */
+    public LocalDate getFechaTope() 
+    {
+        return fechaTope;
     }
 
 }
